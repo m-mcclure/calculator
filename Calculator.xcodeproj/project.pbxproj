@@ -13,6 +13,7 @@
 		343DF0AA1B2E1C41007DE866 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343DF0A91B2E1C41007DE866 /* Images.xcassets */; };
 		343DF0AD1B2E1C41007DE866 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 343DF0AB1B2E1C41007DE866 /* LaunchScreen.xib */; };
 		343DF0B91B2E1C41007DE866 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343DF0B81B2E1C41007DE866 /* CalculatorTests.swift */; };
+		34A444491B44A1E60044AAC9 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A444481B44A1E60044AAC9 /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		343DF0B21B2E1C41007DE866 /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		343DF0B71B2E1C41007DE866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		343DF0B81B2E1C41007DE866 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		34A444481B44A1E60044AAC9 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				343DF0A21B2E1C41007DE866 /* AppDelegate.swift */,
-				343DF0A41B2E1C41007DE866 /* ViewController.swift */,
-				343DF0A61B2E1C41007DE866 /* Main.storyboard */,
+				34A444471B44A1B40044AAC9 /* Models */,
+				34A444461B44A1AC0044AAC9 /* Controllers */,
+				34A444451B44A1A30044AAC9 /* Views */,
 				343DF0A91B2E1C41007DE866 /* Images.xcassets */,
 				343DF0AB1B2E1C41007DE866 /* LaunchScreen.xib */,
 				343DF0A01B2E1C41007DE866 /* Supporting Files */,
@@ -110,6 +113,30 @@
 				343DF0B71B2E1C41007DE866 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		34A444451B44A1A30044AAC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				343DF0A61B2E1C41007DE866 /* Main.storyboard */,
+				34A444481B44A1E60044AAC9 /* Button.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		34A444461B44A1AC0044AAC9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				343DF0A41B2E1C41007DE866 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		34A444471B44A1B40044AAC9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				343DF0A51B2E1C41007DE866 /* ViewController.swift in Sources */,
+				34A444491B44A1E60044AAC9 /* Button.swift in Sources */,
 				343DF0A31B2E1C41007DE866 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +439,7 @@
 				343DF0BE1B2E1C41007DE866 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		343DF0BF1B2E1C41007DE866 /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +448,7 @@
 				343DF0C11B2E1C41007DE866 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
