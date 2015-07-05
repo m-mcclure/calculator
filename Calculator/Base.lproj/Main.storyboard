@@ -830,6 +830,23 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="omicron86r-1x" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-O3-2iS">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rFR-O3-2iS" secondAttribute="height" multiplier="160:37" id="WYT-YA-VMx"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WYT-YA-VMx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="224" y="55" width="120" height="37"/>
+                                    <mask key="constraints">
+                                        <include reference="WYT-YA-VMx"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -846,9 +863,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="MQK-Gp-1fJ" secondAttribute="trailing" constant="-16" id="Eef-qc-L11"/>
                             <constraint firstItem="MQK-Gp-1fJ" firstAttribute="leading" secondItem="sFP-Qc-7Bz" secondAttribute="leadingMargin" constant="-16" id="VLk-uy-gvI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aoM-qH-rWc" secondAttribute="trailing" constant="-16" id="b2P-Wg-agC"/>
+                            <constraint firstItem="rFR-O3-2iS" firstAttribute="trailing" secondItem="sFP-Qc-7Bz" secondAttribute="trailingMargin" id="bfa-S5-NKt"/>
                             <constraint firstItem="v5Y-Dx-wRX" firstAttribute="top" secondItem="aoM-qH-rWc" secondAttribute="bottom" constant="16" id="cZo-Uj-JRu">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="MQK-Gp-1fJ" firstAttribute="top" secondItem="rFR-O3-2iS" secondAttribute="bottom" constant="8" id="hs7-CV-R7b"/>
                             <constraint firstItem="v5Y-Dx-wRX" firstAttribute="top" secondItem="aoM-qH-rWc" secondAttribute="bottom" id="pr2-OM-Uus"/>
                             <constraint firstItem="aoM-qH-rWc" firstAttribute="top" secondItem="MQK-Gp-1fJ" secondAttribute="bottom" id="w6s-e6-g0X"/>
                             <constraint firstItem="aoM-qH-rWc" firstAttribute="leading" secondItem="sFP-Qc-7Bz" secondAttribute="leadingMargin" constant="16" id="zbu-gU-anv">
@@ -859,10 +878,12 @@
                             <mask key="subviews">
                                 <exclude reference="aoM-qH-rWc"/>
                                 <exclude reference="MQK-Gp-1fJ"/>
+                                <exclude reference="rFR-O3-2iS"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Eef-qc-L11"/>
                                 <exclude reference="VLk-uy-gvI"/>
+                                <exclude reference="hs7-CV-R7b"/>
                                 <exclude reference="1zR-DX-Ogv"/>
                                 <exclude reference="6DT-vZ-v14"/>
                                 <exclude reference="7Qd-RW-ixz"/>
@@ -871,6 +892,7 @@
                                 <exclude reference="b2P-Wg-agC"/>
                                 <exclude reference="w6s-e6-g0X"/>
                                 <exclude reference="zbu-gU-anv"/>
+                                <exclude reference="bfa-S5-NKt"/>
                                 <exclude reference="6vi-eG-aNW"/>
                                 <exclude reference="cZo-Uj-JRu"/>
                                 <exclude reference="pr2-OM-Uus"/>
@@ -880,10 +902,12 @@
                             <mask key="subviews">
                                 <include reference="aoM-qH-rWc"/>
                                 <include reference="MQK-Gp-1fJ"/>
+                                <include reference="rFR-O3-2iS"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Eef-qc-L11"/>
                                 <include reference="VLk-uy-gvI"/>
+                                <include reference="hs7-CV-R7b"/>
                                 <exclude reference="1zR-DX-Ogv"/>
                                 <include reference="6DT-vZ-v14"/>
                                 <exclude reference="7Qd-RW-ixz"/>
@@ -892,6 +916,7 @@
                                 <include reference="b2P-Wg-agC"/>
                                 <include reference="w6s-e6-g0X"/>
                                 <exclude reference="zbu-gU-anv"/>
+                                <include reference="bfa-S5-NKt"/>
                                 <exclude reference="6vi-eG-aNW"/>
                                 <exclude reference="cZo-Uj-JRu"/>
                                 <include reference="pr2-OM-Uus"/>
@@ -904,4 +929,7 @@
             <point key="canvasLocation" x="126" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="omicron86r-1x" width="120" height="22"/>
+    </resources>
 </document>
