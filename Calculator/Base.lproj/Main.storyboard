@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1NO-EK-TWo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -9,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="jwv-1h-meR">
             <objects>
-                <viewController id="1NO-EK-TWo" sceneMemberID="viewController">
+                <viewController id="1NO-EK-TWo" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XCE-vO-EIB"/>
                         <viewControllerLayoutGuide type="bottom" id="v5Y-Dx-wRX"/>
@@ -32,8 +33,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gQ-fi-MAX">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="%">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="π">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -44,6 +45,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="O0y-4b-Pwa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMe-HG-jx4">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -52,6 +56,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="x8G-n7-B2T"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0n-Cc-i90">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -60,12 +67,15 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="oxJ-ys-Jv8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdr-Ti-wUp">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="mod">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="e">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -76,36 +86,48 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="xvh-9O-cvG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5u-qs-nh6">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="9">
+                                        <state key="normal" title="5">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="ozq-qY-3RJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypw-8R-xfp">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="9">
+                                        <state key="normal" title="6">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="iHK-fs-Ohh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpw-ac-8qA">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="•">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="×">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="operate:" destination="1NO-EK-TWo" eventType="touchUpInside" id="kT8-AQ-OE8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU7-oM-ch7">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="CE">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="%">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -113,9 +135,12 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="C">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clearAll:" destination="1NO-EK-TWo" eventType="touchUpInside" id="ZWQ-tX-6kK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TB-0X-Agm">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -124,6 +149,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="decimalKeyPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="EMx-2E-dD2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6F4-IB-bdn">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -132,30 +160,42 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="YgW-Wk-OJq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-W6-Vk1">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="=">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calculateThis:" destination="1NO-EK-TWo" eventType="touchUpInside" id="mdU-tk-pks"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CI8-Y3-Uye">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="+">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="operate:" destination="1NO-EK-TWo" eventType="touchUpInside" id="nbT-Bm-zo8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYH-uW-J5j">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="–">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="−">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="operate:" destination="1NO-EK-TWo" eventType="touchUpInside" id="4AV-14-ula"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbI-Gj-RmS">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -164,6 +204,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="zQH-v0-ZIQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U50-pA-AM3">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -172,36 +215,42 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="Xwt-D6-L8V"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b5-9j-2HR">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="/">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="÷">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="operate:" destination="1NO-EK-TWo" eventType="touchUpInside" id="Kls-7e-nqe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGx-lJ-z6J">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="x2">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="x²">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRq-ZS-9KO">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="π">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="x³">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfL-WI-RGI">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="e">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="x!">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -209,7 +258,7 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="+/-">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -220,6 +269,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="digitPressed:" destination="1NO-EK-TWo" eventType="touchUpInside" id="qIN-7D-8ze"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -411,8 +463,6 @@
                                     <mask key="constraints">
                                         <exclude reference="J3e-pz-Vcf"/>
                                         <exclude reference="mPb-W5-YUj"/>
-                                        <exclude reference="RAz-qD-vXv"/>
-                                        <exclude reference="qiN-vu-TGv"/>
                                         <exclude reference="2Jh-h3-D3e"/>
                                         <exclude reference="2fk-HN-xeG"/>
                                         <exclude reference="3Wq-Qz-oey"/>
@@ -487,15 +537,60 @@
                                         <exclude reference="ynE-OK-XDo"/>
                                         <exclude reference="zeC-9t-Zck"/>
                                         <exclude reference="zfx-LY-2xL"/>
-                                        <exclude reference="59e-Mb-mcX"/>
-                                        <exclude reference="Dly-m1-7WL"/>
-                                        <exclude reference="f7k-GQ-GOF"/>
-                                        <exclude reference="2s1-HJ-a8m"/>
-                                        <exclude reference="4th-xv-zJ1"/>
-                                        <exclude reference="InW-Zx-k5H"/>
-                                        <exclude reference="gmS-Xl-rYd"/>
+                                        <exclude reference="SQi-S4-Qy5"/>
+                                        <exclude reference="2zH-AG-Hx0"/>
+                                        <exclude reference="CHF-cd-ZVu"/>
+                                        <exclude reference="CqA-cu-Z3T"/>
+                                        <exclude reference="Crz-by-g0g"/>
+                                        <exclude reference="GVN-UP-Az4"/>
+                                        <exclude reference="NeZ-xo-Wn2"/>
+                                        <exclude reference="j7W-pO-JXy"/>
+                                        <exclude reference="jwr-wn-yMx"/>
+                                        <exclude reference="jyD-V9-5vF"/>
+                                        <exclude reference="g3W-vu-a47"/>
+                                        <exclude reference="gK3-ZY-lIc"/>
+                                        <exclude reference="hXl-pT-aEq"/>
+                                        <exclude reference="RAz-qD-vXv"/>
+                                        <exclude reference="qiN-vu-TGv"/>
+                                        <exclude reference="DHe-7l-L0S"/>
+                                        <exclude reference="VU3-QX-1uQ"/>
+                                        <exclude reference="b6E-AD-rBQ"/>
+                                        <exclude reference="6tv-Uv-WeH"/>
+                                        <exclude reference="Iiq-dX-5SI"/>
+                                        <exclude reference="d3y-ZT-k4d"/>
+                                        <exclude reference="vhO-5b-soy"/>
+                                        <exclude reference="8di-la-Z39"/>
+                                        <exclude reference="AeY-A1-O6M"/>
+                                        <exclude reference="CwF-ba-ykF"/>
+                                        <exclude reference="7tz-i8-0wl"/>
+                                        <exclude reference="eV3-mV-LPL"/>
                                         <exclude reference="G5K-Rm-cG2"/>
                                         <exclude reference="Yxz-Bn-yQb"/>
+                                        <exclude reference="KSW-5w-0Co"/>
+                                        <exclude reference="umY-uq-3Sn"/>
+                                        <exclude reference="InW-Zx-k5H"/>
+                                        <exclude reference="gmS-Xl-rYd"/>
+                                        <exclude reference="Ywb-cP-Ncq"/>
+                                        <exclude reference="ukf-r6-BgO"/>
+                                        <exclude reference="G9J-AX-yCg"/>
+                                        <exclude reference="tgZ-wQ-lE3"/>
+                                        <exclude reference="2wO-4o-ond"/>
+                                        <exclude reference="9iM-5J-yup"/>
+                                        <exclude reference="Hy6-xi-rmf"/>
+                                        <exclude reference="TNc-vy-GpR"/>
+                                        <exclude reference="XPV-AB-sbA"/>
+                                        <exclude reference="h52-4w-KeQ"/>
+                                        <exclude reference="i7l-iH-xsq"/>
+                                        <exclude reference="vHT-dx-cob"/>
+                                        <exclude reference="XgA-rK-bcC"/>
+                                        <exclude reference="2s1-HJ-a8m"/>
+                                        <exclude reference="4th-xv-zJ1"/>
+                                        <exclude reference="H5y-LV-ygO"/>
+                                        <exclude reference="PRg-2V-hQy"/>
+                                        <exclude reference="RxO-XM-e1h"/>
+                                        <exclude reference="TsC-1F-MqM"/>
+                                        <exclude reference="ZqR-51-79F"/>
+                                        <exclude reference="uec-yb-K88"/>
                                         <exclude reference="uY0-MS-DUZ"/>
                                         <exclude reference="QHh-BX-Pk8"/>
                                         <exclude reference="YY0-g9-HtH"/>
@@ -507,8 +602,6 @@
                                         <exclude reference="kdd-6E-CjJ"/>
                                         <exclude reference="tjL-gK-rto"/>
                                         <exclude reference="w9B-ab-mHL"/>
-                                        <exclude reference="Ywb-cP-Ncq"/>
-                                        <exclude reference="ukf-r6-BgO"/>
                                         <exclude reference="FK7-XG-Z3Q"/>
                                         <exclude reference="Oqc-P5-QU4"/>
                                         <exclude reference="SqV-oN-WeB"/>
@@ -517,53 +610,12 @@
                                         <exclude reference="i0w-Na-ZQg"/>
                                         <exclude reference="seo-a9-eWC"/>
                                         <exclude reference="tgd-UZ-DNq"/>
-                                        <exclude reference="XgA-rK-bcC"/>
-                                        <exclude reference="KSW-5w-0Co"/>
-                                        <exclude reference="umY-uq-3Sn"/>
-                                        <exclude reference="2wO-4o-ond"/>
-                                        <exclude reference="9iM-5J-yup"/>
-                                        <exclude reference="Hy6-xi-rmf"/>
-                                        <exclude reference="TNc-vy-GpR"/>
-                                        <exclude reference="XPV-AB-sbA"/>
-                                        <exclude reference="h52-4w-KeQ"/>
-                                        <exclude reference="i7l-iH-xsq"/>
-                                        <exclude reference="vHT-dx-cob"/>
-                                        <exclude reference="6tv-Uv-WeH"/>
-                                        <exclude reference="Iiq-dX-5SI"/>
-                                        <exclude reference="d3y-ZT-k4d"/>
-                                        <exclude reference="vhO-5b-soy"/>
+                                        <exclude reference="f7k-GQ-GOF"/>
+                                        <exclude reference="59e-Mb-mcX"/>
+                                        <exclude reference="Dly-m1-7WL"/>
                                         <exclude reference="FHx-y5-LpX"/>
                                         <exclude reference="LJf-R5-pBW"/>
                                         <exclude reference="css-aN-1Wz"/>
-                                        <exclude reference="g3W-vu-a47"/>
-                                        <exclude reference="gK3-ZY-lIc"/>
-                                        <exclude reference="hXl-pT-aEq"/>
-                                        <exclude reference="SQi-S4-Qy5"/>
-                                        <exclude reference="G9J-AX-yCg"/>
-                                        <exclude reference="tgZ-wQ-lE3"/>
-                                        <exclude reference="2zH-AG-Hx0"/>
-                                        <exclude reference="CHF-cd-ZVu"/>
-                                        <exclude reference="CqA-cu-Z3T"/>
-                                        <exclude reference="Crz-by-g0g"/>
-                                        <exclude reference="GVN-UP-Az4"/>
-                                        <exclude reference="NeZ-xo-Wn2"/>
-                                        <exclude reference="j7W-pO-JXy"/>
-                                        <exclude reference="jwr-wn-yMx"/>
-                                        <exclude reference="jyD-V9-5vF"/>
-                                        <exclude reference="H5y-LV-ygO"/>
-                                        <exclude reference="PRg-2V-hQy"/>
-                                        <exclude reference="RxO-XM-e1h"/>
-                                        <exclude reference="TsC-1F-MqM"/>
-                                        <exclude reference="ZqR-51-79F"/>
-                                        <exclude reference="uec-yb-K88"/>
-                                        <exclude reference="8di-la-Z39"/>
-                                        <exclude reference="AeY-A1-O6M"/>
-                                        <exclude reference="CwF-ba-ykF"/>
-                                        <exclude reference="7tz-i8-0wl"/>
-                                        <exclude reference="eV3-mV-LPL"/>
-                                        <exclude reference="DHe-7l-L0S"/>
-                                        <exclude reference="VU3-QX-1uQ"/>
-                                        <exclude reference="b6E-AD-rBQ"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -597,8 +649,6 @@
                                     <mask key="constraints">
                                         <exclude reference="J3e-pz-Vcf"/>
                                         <include reference="mPb-W5-YUj"/>
-                                        <include reference="RAz-qD-vXv"/>
-                                        <include reference="qiN-vu-TGv"/>
                                         <include reference="2Jh-h3-D3e"/>
                                         <include reference="2fk-HN-xeG"/>
                                         <include reference="3Wq-Qz-oey"/>
@@ -673,15 +723,60 @@
                                         <include reference="ynE-OK-XDo"/>
                                         <include reference="zeC-9t-Zck"/>
                                         <include reference="zfx-LY-2xL"/>
-                                        <include reference="59e-Mb-mcX"/>
-                                        <include reference="Dly-m1-7WL"/>
-                                        <include reference="f7k-GQ-GOF"/>
-                                        <include reference="2s1-HJ-a8m"/>
-                                        <include reference="4th-xv-zJ1"/>
-                                        <include reference="InW-Zx-k5H"/>
-                                        <include reference="gmS-Xl-rYd"/>
+                                        <include reference="SQi-S4-Qy5"/>
+                                        <include reference="2zH-AG-Hx0"/>
+                                        <include reference="CHF-cd-ZVu"/>
+                                        <include reference="CqA-cu-Z3T"/>
+                                        <include reference="Crz-by-g0g"/>
+                                        <include reference="GVN-UP-Az4"/>
+                                        <include reference="NeZ-xo-Wn2"/>
+                                        <include reference="j7W-pO-JXy"/>
+                                        <include reference="jwr-wn-yMx"/>
+                                        <include reference="jyD-V9-5vF"/>
+                                        <include reference="g3W-vu-a47"/>
+                                        <include reference="gK3-ZY-lIc"/>
+                                        <include reference="hXl-pT-aEq"/>
+                                        <include reference="RAz-qD-vXv"/>
+                                        <include reference="qiN-vu-TGv"/>
+                                        <include reference="DHe-7l-L0S"/>
+                                        <include reference="VU3-QX-1uQ"/>
+                                        <include reference="b6E-AD-rBQ"/>
+                                        <include reference="6tv-Uv-WeH"/>
+                                        <include reference="Iiq-dX-5SI"/>
+                                        <include reference="d3y-ZT-k4d"/>
+                                        <include reference="vhO-5b-soy"/>
+                                        <include reference="8di-la-Z39"/>
+                                        <include reference="AeY-A1-O6M"/>
+                                        <include reference="CwF-ba-ykF"/>
+                                        <include reference="7tz-i8-0wl"/>
+                                        <include reference="eV3-mV-LPL"/>
                                         <include reference="G5K-Rm-cG2"/>
                                         <include reference="Yxz-Bn-yQb"/>
+                                        <include reference="KSW-5w-0Co"/>
+                                        <include reference="umY-uq-3Sn"/>
+                                        <include reference="InW-Zx-k5H"/>
+                                        <include reference="gmS-Xl-rYd"/>
+                                        <include reference="Ywb-cP-Ncq"/>
+                                        <include reference="ukf-r6-BgO"/>
+                                        <include reference="G9J-AX-yCg"/>
+                                        <include reference="tgZ-wQ-lE3"/>
+                                        <include reference="2wO-4o-ond"/>
+                                        <include reference="9iM-5J-yup"/>
+                                        <include reference="Hy6-xi-rmf"/>
+                                        <include reference="TNc-vy-GpR"/>
+                                        <include reference="XPV-AB-sbA"/>
+                                        <include reference="h52-4w-KeQ"/>
+                                        <include reference="i7l-iH-xsq"/>
+                                        <include reference="vHT-dx-cob"/>
+                                        <include reference="XgA-rK-bcC"/>
+                                        <include reference="2s1-HJ-a8m"/>
+                                        <include reference="4th-xv-zJ1"/>
+                                        <include reference="H5y-LV-ygO"/>
+                                        <include reference="PRg-2V-hQy"/>
+                                        <include reference="RxO-XM-e1h"/>
+                                        <include reference="TsC-1F-MqM"/>
+                                        <include reference="ZqR-51-79F"/>
+                                        <include reference="uec-yb-K88"/>
                                         <include reference="uY0-MS-DUZ"/>
                                         <include reference="QHh-BX-Pk8"/>
                                         <include reference="YY0-g9-HtH"/>
@@ -693,8 +788,6 @@
                                         <include reference="kdd-6E-CjJ"/>
                                         <include reference="tjL-gK-rto"/>
                                         <include reference="w9B-ab-mHL"/>
-                                        <include reference="Ywb-cP-Ncq"/>
-                                        <include reference="ukf-r6-BgO"/>
                                         <include reference="FK7-XG-Z3Q"/>
                                         <include reference="Oqc-P5-QU4"/>
                                         <include reference="SqV-oN-WeB"/>
@@ -703,53 +796,12 @@
                                         <include reference="i0w-Na-ZQg"/>
                                         <include reference="seo-a9-eWC"/>
                                         <include reference="tgd-UZ-DNq"/>
-                                        <include reference="XgA-rK-bcC"/>
-                                        <include reference="KSW-5w-0Co"/>
-                                        <include reference="umY-uq-3Sn"/>
-                                        <include reference="2wO-4o-ond"/>
-                                        <include reference="9iM-5J-yup"/>
-                                        <include reference="Hy6-xi-rmf"/>
-                                        <include reference="TNc-vy-GpR"/>
-                                        <include reference="XPV-AB-sbA"/>
-                                        <include reference="h52-4w-KeQ"/>
-                                        <include reference="i7l-iH-xsq"/>
-                                        <include reference="vHT-dx-cob"/>
-                                        <include reference="6tv-Uv-WeH"/>
-                                        <include reference="Iiq-dX-5SI"/>
-                                        <include reference="d3y-ZT-k4d"/>
-                                        <include reference="vhO-5b-soy"/>
+                                        <include reference="f7k-GQ-GOF"/>
+                                        <include reference="59e-Mb-mcX"/>
+                                        <include reference="Dly-m1-7WL"/>
                                         <include reference="FHx-y5-LpX"/>
                                         <include reference="LJf-R5-pBW"/>
                                         <include reference="css-aN-1Wz"/>
-                                        <include reference="g3W-vu-a47"/>
-                                        <include reference="gK3-ZY-lIc"/>
-                                        <include reference="hXl-pT-aEq"/>
-                                        <include reference="SQi-S4-Qy5"/>
-                                        <include reference="G9J-AX-yCg"/>
-                                        <include reference="tgZ-wQ-lE3"/>
-                                        <include reference="2zH-AG-Hx0"/>
-                                        <include reference="CHF-cd-ZVu"/>
-                                        <include reference="CqA-cu-Z3T"/>
-                                        <include reference="Crz-by-g0g"/>
-                                        <include reference="GVN-UP-Az4"/>
-                                        <include reference="NeZ-xo-Wn2"/>
-                                        <include reference="j7W-pO-JXy"/>
-                                        <include reference="jwr-wn-yMx"/>
-                                        <include reference="jyD-V9-5vF"/>
-                                        <include reference="H5y-LV-ygO"/>
-                                        <include reference="PRg-2V-hQy"/>
-                                        <include reference="RxO-XM-e1h"/>
-                                        <include reference="TsC-1F-MqM"/>
-                                        <include reference="ZqR-51-79F"/>
-                                        <include reference="uec-yb-K88"/>
-                                        <include reference="8di-la-Z39"/>
-                                        <include reference="AeY-A1-O6M"/>
-                                        <include reference="CwF-ba-ykF"/>
-                                        <include reference="7tz-i8-0wl"/>
-                                        <include reference="eV3-mV-LPL"/>
-                                        <include reference="DHe-7l-L0S"/>
-                                        <include reference="VU3-QX-1uQ"/>
-                                        <include reference="b6E-AD-rBQ"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -759,14 +811,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xi-fb-MCu">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00000000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZc-58-t5a">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZc-58-t5a">
                                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <color key="textColor" red="0.84094429137258186" green="0.95871486930288163" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="jZc-58-t5a" firstAttribute="top" secondItem="3xi-fb-MCu" secondAttribute="top" constant="8" id="GhE-O6-A6b"/>
                                             <constraint firstAttribute="bottom" secondItem="jZc-58-t5a" secondAttribute="bottom" constant="8" id="K9N-EZ-ETg"/>
@@ -840,8 +892,7 @@
                                         <exclude reference="WYT-YA-VMx"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="224" y="55" width="120" height="37"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="WYT-YA-VMx"/>
                                     </mask>
@@ -881,6 +932,10 @@
                                 <exclude reference="rFR-O3-2iS"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6vi-eG-aNW"/>
+                                <exclude reference="cZo-Uj-JRu"/>
+                                <exclude reference="pr2-OM-Uus"/>
+                                <exclude reference="bfa-S5-NKt"/>
                                 <exclude reference="Eef-qc-L11"/>
                                 <exclude reference="VLk-uy-gvI"/>
                                 <exclude reference="hs7-CV-R7b"/>
@@ -892,10 +947,6 @@
                                 <exclude reference="b2P-Wg-agC"/>
                                 <exclude reference="w6s-e6-g0X"/>
                                 <exclude reference="zbu-gU-anv"/>
-                                <exclude reference="bfa-S5-NKt"/>
-                                <exclude reference="6vi-eG-aNW"/>
-                                <exclude reference="cZo-Uj-JRu"/>
-                                <exclude reference="pr2-OM-Uus"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -905,6 +956,10 @@
                                 <include reference="rFR-O3-2iS"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6vi-eG-aNW"/>
+                                <exclude reference="cZo-Uj-JRu"/>
+                                <include reference="pr2-OM-Uus"/>
+                                <include reference="bfa-S5-NKt"/>
                                 <include reference="Eef-qc-L11"/>
                                 <include reference="VLk-uy-gvI"/>
                                 <include reference="hs7-CV-R7b"/>
@@ -916,13 +971,13 @@
                                 <include reference="b2P-Wg-agC"/>
                                 <include reference="w6s-e6-g0X"/>
                                 <exclude reference="zbu-gU-anv"/>
-                                <include reference="bfa-S5-NKt"/>
-                                <exclude reference="6vi-eG-aNW"/>
-                                <exclude reference="cZo-Uj-JRu"/>
-                                <include reference="pr2-OM-Uus"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="decimalKey" destination="8TB-0X-Agm" id="e0z-Jd-wYU"/>
+                        <outlet property="display" destination="jZc-58-t5a" id="aPW-rt-AOr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jye-0S-RlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
