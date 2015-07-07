@@ -6,13 +6,16 @@
 //  Copyright (c) 2015 Matthew McClure. All rights reserved.
 //
 
+//problems to work out: adding more than two numbers only adds the most recent addition to the last total and ignores all others in between;
+//new problem where first two numbers after clearing or just starting out don't add together... but subsequent adds do...
+
 import UIKit
 
 class ViewController: UIViewController {
   
   var lastNumberEntered : Float = 0.0
   var firstNumberToCalculate : Float = 0.0
-  var total : Float = 0.0
+  var lastTotaled : Float = 0.0
   var displayedText = ""
   var userIsTyping : Bool = false
   var operationSymbol = ""
@@ -57,7 +60,7 @@ class ViewController: UIViewController {
     case "+": operationSymbol = "+"
     display.text = ""
     finishedEnteringLastNumber()
-    firstNumberToCalculate = lastNumberEntered
+//    firstNumberToCalculate = lastNumberEntered
     lastNumberEntered = 0.0
     println(operationSymbol)
         default: finishedEnteringLastNumber()
@@ -74,11 +77,13 @@ class ViewController: UIViewController {
       case "÷": println("divide")
 //      case "×":
       //      case "−":
-    case "+": let firstNumber = firstNumberToCalculate
-    let secondNumber : Float = lastNumberEntered
+    case "+": let firstNumber = lastNumberEntered
+    let secondNumber : Float = firstNumberToCalculate
     let sum : Float = firstNumber + secondNumber
-    println(sum)
-      display.text = sum.description
+    lastTotaled = sum
+    println(lastTotaled)
+      display.text = lastTotaled.description
+      firstNumberToCalculate = lastTotaled
     default: println("do nothing")
     }
     
@@ -87,6 +92,9 @@ class ViewController: UIViewController {
   
   @IBAction func clearAll(sender: AnyObject) {
     display.text = "0"
+    lastNumberEntered = 0.0
+    lastTotaled = 0.0
+    firstNumberToCalculate = 0.0
     println("umm")
   }
   override func viewDidLoad() {
