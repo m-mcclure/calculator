@@ -19,17 +19,22 @@ class ViewController: UIViewController {
   var displayedText = ""
   var userIsTyping : Bool = false
   var operationSymbol = ""
+  var counter = 0
+  
   @IBOutlet weak var display: UILabel!
   @IBOutlet weak var decimalKey: UIButton!
   @IBAction func decimalKeyPressed(sender: AnyObject) {
     display.text = display.text! + "."
     displayedText = display.text!
     decimalKey.enabled = false
-    println("dec disabled")
   }
   
   @IBAction func digitPressed(sender: UIButton) {
+    display.text = ""
+    println("key was pressed")
+    
     let digit = sender.currentTitle!
+    println(digit)
     if userIsTyping {
       display.text = display.text! + digit
       displayedText = display.text!
@@ -37,6 +42,10 @@ class ViewController: UIViewController {
       display.text = digit
       displayedText = display.text!
       userIsTyping = true
+      if counter == 0 {
+      firstNumberToCalculate = NSNumberFormatter().numberFromString(digit)!.floatValue
+        println("counter was zero")
+      }
     }
   }
   
@@ -47,7 +56,7 @@ class ViewController: UIViewController {
     lastNumberEntered = convertedNumber
     decimalKey.enabled = true
     display.text = ""
-    println(lastNumberEntered)
+    println("Last number (that's been converted to a float) entered before operation button pressed: \(lastNumberEntered)")
   }
   
   @IBAction func operate(sender: UIButton) {
@@ -60,16 +69,12 @@ class ViewController: UIViewController {
     case "+": operationSymbol = "+"
     display.text = ""
     finishedEnteringLastNumber()
-//    firstNumberToCalculate = lastNumberEntered
+    //firstNumberToCalculate = lastNumberEntered
     lastNumberEntered = 0.0
     println(operationSymbol)
         default: finishedEnteringLastNumber()
     }
   }
-//  
-//  func display(){
-//    display.text =
-//  }
   
   @IBAction func calculateThis(sender: AnyObject) {
     finishedEnteringLastNumber()
@@ -81,24 +86,22 @@ class ViewController: UIViewController {
     let secondNumber : Float = firstNumberToCalculate
     let sum : Float = firstNumber + secondNumber
     lastTotaled = sum
-    println(lastTotaled)
+    println("Last totaled: \(lastTotaled)")
       display.text = lastTotaled.description
       firstNumberToCalculate = lastTotaled
-    default: println("do nothing")
+    default: println("default case: do nothing")
     }
-    
   }
-  
   
   @IBAction func clearAll(sender: AnyObject) {
     display.text = "0"
     lastNumberEntered = 0.0
     lastTotaled = 0.0
     firstNumberToCalculate = 0.0
-    println("umm")
+    println("cleared")
+    counter++
+    println(counter)
   }
-  override func viewDidLoad() {
 
-  }
 }
 
