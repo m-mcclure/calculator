@@ -203,6 +203,7 @@ class ViewController: UIViewController {
     default: println("default case: do nothing")
     }
     firstNumberToCalculate = lastTotaled
+    decimalKey.enabled = true
   }
   
   @IBAction func clearAll() {
@@ -213,5 +214,6 @@ class ViewController: UIViewController {
     println("cleared")
     enterHasBeenPressed = false
     clearHasBeenPressed = true
+    decimalKey.enabled = true
   }
 }
