@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     if userIsTyping {
       if enterHasBeenPressed {
-        clearAll()
+        //clearAll()
       }
       
       if display.text == "0" {
@@ -129,6 +129,17 @@ class ViewController: UIViewController {
     }
   }
   
+  @IBAction func togglePosNeg(sender: UIButton) {
+    let stringToConvert : NSString = display.text!
+    var convertedString = (stringToConvert as NSString).doubleValue
+    println(convertedString)
+      convertedString = -1 * convertedString
+    displayedText = "\(convertedString)"
+    display.text = "\(convertedString)"
+    lastTotaled = convertedString
+  }
+  
+  
   @IBAction func squareRoot(sender: UIButton) {
     println(display.text)
     let stringToConvert : NSString = display.text!
@@ -137,6 +148,8 @@ class ViewController: UIViewController {
     let root = sqrt(convertedString)
     displayedText = "\(root)"
     display.text = "\(root)"
+    println(root)
+    lastTotaled = root
   }
   
   @IBAction func percentage(sender: AnyObject) {
@@ -147,6 +160,8 @@ class ViewController: UIViewController {
     let percentage = convertedString / 100.0
     displayedText = "\(percentage)"
     display.text = "\(percentage)"
+    println("should be a \(percentage)")
+    lastTotaled = percentage
   }
   
   
@@ -170,12 +185,14 @@ class ViewController: UIViewController {
     lastTotaled = product
     println("Last totaled: \(lastTotaled)")
     display.text = lastTotaled.description
+      
     case "−": let firstNumber = lastNumberEntered
     let secondNumber : Double = firstNumberToCalculate
     let difference : Double = secondNumber - firstNumber
     lastTotaled = difference
     println("Last totaled: \(lastTotaled)")
     display.text = lastTotaled.description
+      
     case "+": let firstNumber = lastNumberEntered
     let secondNumber : Double = firstNumberToCalculate
     let sum : Double = firstNumber + secondNumber

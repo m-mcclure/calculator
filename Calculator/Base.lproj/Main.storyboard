@@ -231,6 +231,9 @@
                                                 <include reference="t92-4g-52Q"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="togglePosNeg:" destination="fVn-tA-Puu" eventType="touchUpInside" id="krU-yp-Vaz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="age-qO-Ggp" customClass="Button" customModule="Calculator" customModuleProvider="target">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
