@@ -10,6 +10,7 @@
 //new problem where first two numbers after clearing or just starting out don't add together... but subsequent adds do...
 
 import UIKit
+import Darwin
 
 class ViewController: UIViewController {
   
@@ -34,20 +35,41 @@ class ViewController: UIViewController {
   }
   
   @IBAction func digitPressed(sender: UIButton) {
-    
-    let digit = sender.currentTitle!
-    if userIsTyping {
-      if clearHasBeenPressed {
-        display.text = "" 
+    if sender.currentTitle == "π" {
+      println("twas pi")
+      let pi = M_PI
+      let roundedPi = Double(round(10000000*pi)/10000000)
+      if userIsTyping {
+        if clearHasBeenPressed {
+          display.text = "\(roundedPi)"
+        }
+        displayedText = display.text!
+        convertThisNumber(displayedText)
+      } else {
+        display.text = "\(roundedPi)"
+        displayedText = display.text!
+        userIsTyping = true
+        convertThisNumber(displayedText)
       }
-      display.text = display.text! + digit
-      displayedText = display.text!
-      convertThisNumber(displayedText)
+
+      
+    } else if sender.currentTitle == "e" {
+      println("twas an e")
     } else {
-      display.text = digit
-      displayedText = display.text!
-      userIsTyping = true
-      convertThisNumber(displayedText)
+      let digit = sender.currentTitle!
+      if userIsTyping {
+        if clearHasBeenPressed {
+          display.text = ""
+        }
+        display.text = display.text! + digit
+        displayedText = display.text!
+        convertThisNumber(displayedText)
+      } else {
+        display.text = digit
+        displayedText = display.text!
+        userIsTyping = true
+        convertThisNumber(displayedText)
+      }
     }
   }
   
@@ -73,47 +95,47 @@ class ViewController: UIViewController {
     let operation = sender.currentTitle!
     switch operation {
     case "÷": operationSymbol = "÷"
-      display.text = ""
-      finishedEnteringLastNumber()
-      println("Last num befo + sign hit: \(lastNumberEntered)")
-      if enterHasBeenPressed {
-        firstNumberToCalculate = lastTotaled
-      } else {
-        firstNumberToCalculate = lastNumberEntered
-      }
-      println(operationSymbol)
-    case "×": operationSymbol = "×"
-      display.text = ""
-      finishedEnteringLastNumber()
-      println("Last num befo + sign hit: \(lastNumberEntered)")
-      if enterHasBeenPressed {
-      firstNumberToCalculate = lastTotaled
-      } else {
-      firstNumberToCalculate = lastNumberEntered
-      }
-    println(operationSymbol)
-      
-    case "−": operationSymbol = "−"
-      display.text = ""
-      finishedEnteringLastNumber()
-      println("Last num befo + sign hit: \(lastNumberEntered)")
-      if enterHasBeenPressed {
-        firstNumberToCalculate = lastTotaled
-      } else {
-        firstNumberToCalculate = lastNumberEntered
-      }
-      println(operationSymbol)
-      
-    case "+": operationSymbol = "+"
-      display.text = ""
-      finishedEnteringLastNumber()
-      println("Last num befo + sign hit: \(lastNumberEntered)")
+    display.text = ""
+    finishedEnteringLastNumber()
+    println("Last num befo + sign hit: \(lastNumberEntered)")
     if enterHasBeenPressed {
       firstNumberToCalculate = lastTotaled
     } else {
       firstNumberToCalculate = lastNumberEntered
     }
-      println(operationSymbol)
+    println(operationSymbol)
+    case "×": operationSymbol = "×"
+    display.text = ""
+    finishedEnteringLastNumber()
+    println("Last num befo + sign hit: \(lastNumberEntered)")
+    if enterHasBeenPressed {
+      firstNumberToCalculate = lastTotaled
+    } else {
+      firstNumberToCalculate = lastNumberEntered
+    }
+    println(operationSymbol)
+      
+    case "−": operationSymbol = "−"
+    display.text = ""
+    finishedEnteringLastNumber()
+    println("Last num befo + sign hit: \(lastNumberEntered)")
+    if enterHasBeenPressed {
+      firstNumberToCalculate = lastTotaled
+    } else {
+      firstNumberToCalculate = lastNumberEntered
+    }
+    println(operationSymbol)
+      
+    case "+": operationSymbol = "+"
+    display.text = ""
+    finishedEnteringLastNumber()
+    println("Last num befo + sign hit: \(lastNumberEntered)")
+    if enterHasBeenPressed {
+      firstNumberToCalculate = lastTotaled
+    } else {
+      firstNumberToCalculate = lastNumberEntered
+    }
+    println(operationSymbol)
       
     default: finishedEnteringLastNumber()
     }
@@ -125,10 +147,10 @@ class ViewController: UIViewController {
     enterHasBeenPressed = true
     switch operationSymbol {
     case "÷": println("divide")
-      let firstNumber = lastNumberEntered
-      let secondNumber : Double = firstNumberToCalculate
-      let quotient : Double = secondNumber / firstNumber
-      lastTotaled = quotient
+    let firstNumber = lastNumberEntered
+    let secondNumber : Double = firstNumberToCalculate
+    let quotient : Double = secondNumber / firstNumber
+    lastTotaled = quotient
     println("Last totaled: \(lastTotaled)")
     display.text = lastTotaled.description
     case "×": let firstNumber = lastNumberEntered
@@ -144,12 +166,12 @@ class ViewController: UIViewController {
     println("Last totaled: \(lastTotaled)")
     display.text = lastTotaled.description
     case "+": let firstNumber = lastNumberEntered
-      let secondNumber : Double = firstNumberToCalculate
-      let sum : Double = firstNumber + secondNumber
-      lastTotaled = sum
-      println("Last totaled: \(lastTotaled)")
-      display.text = lastTotaled.description
-    
+    let secondNumber : Double = firstNumberToCalculate
+    let sum : Double = firstNumber + secondNumber
+    lastTotaled = sum
+    println("Last totaled: \(lastTotaled)")
+    display.text = lastTotaled.description
+      
     default: println("default case: do nothing")
     }
     firstNumberToCalculate = lastTotaled
