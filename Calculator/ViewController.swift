@@ -19,6 +19,7 @@ class ViewController: UIViewController {
   var displayedText = ""
   var userIsTyping : Bool = false
   var enterHasBeenPressed : Bool = false
+  var clearHasBeenPressed : Bool = false
   var operationSymbol = ""
   var counter = 0
   
@@ -33,8 +34,12 @@ class ViewController: UIViewController {
   }
   
   @IBAction func digitPressed(sender: UIButton) {
+    
     let digit = sender.currentTitle!
     if userIsTyping {
+      if clearHasBeenPressed {
+        display.text = "" 
+      }
       display.text = display.text! + digit
       displayedText = display.text!
       convertThisNumber(displayedText)
@@ -157,5 +162,6 @@ class ViewController: UIViewController {
     firstNumberToCalculate = 0.0
     println("cleared")
     enterHasBeenPressed = false
+    clearHasBeenPressed = true
   }
 }
