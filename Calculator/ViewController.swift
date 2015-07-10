@@ -43,18 +43,24 @@ class ViewController: UIViewController {
         if clearHasBeenPressed {
           display.text = "\(roundedPi)"
         }
-        displayedText = display.text!
-        convertThisNumber(displayedText)
       } else {
         display.text = "\(roundedPi)"
         displayedText = display.text!
         userIsTyping = true
-        convertThisNumber(displayedText)
       }
-
-      
     } else if sender.currentTitle == "e" {
       println("twas an e")
+      let eConstant = 2.71828
+      if userIsTyping {
+        if clearHasBeenPressed {
+          display.text = "\(eConstant)"
+        }
+      } else {
+        display.text = "\(eConstant)"
+        displayedText = display.text!
+        userIsTyping = true
+      }
+
     } else {
       let digit = sender.currentTitle!
       if userIsTyping {
@@ -89,6 +95,13 @@ class ViewController: UIViewController {
     decimalKey.enabled = true
     display.text = ""
     return lastNumberEntered
+  }
+  
+  
+  @IBAction func xSquared(sender: UIButton) {
+    finishedEnteringLastNumber()
+    let squaredNum = lastNumberEntered * lastNumberEntered
+    display.text = squaredNum.description 
   }
   
   @IBAction func operate(sender: UIButton) {
