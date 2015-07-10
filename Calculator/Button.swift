@@ -11,8 +11,8 @@ import UIKit
 class Button: UIButton {
   required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    //self.layer.cornerRadius = 27
-
-//    println(self.bounds.size.width)
+//    self.layer.borderColor = UIColor.lightGrayColor().CGColor
+    //self.layer.cornerRadius = 46
+    //self.layer.borderWidth = 1.5
   }
 }

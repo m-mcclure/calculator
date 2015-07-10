@@ -35,33 +35,6 @@ class ViewController: UIViewController {
   }
   
   @IBAction func digitPressed(sender: UIButton) {
-    if sender.currentTitle == "π" {
-      println("twas pi")
-      let pi = M_PI
-      let roundedPi = Double(round(10000000*pi)/10000000)
-      if userIsTyping {
-        if clearHasBeenPressed {
-          display.text = "\(roundedPi)"
-        }
-      } else {
-        display.text = "\(roundedPi)"
-        displayedText = display.text!
-        userIsTyping = true
-      }
-    } else if sender.currentTitle == "e" {
-      println("twas an e")
-      let eConstant = 2.71828
-      if userIsTyping {
-        if clearHasBeenPressed {
-          display.text = "\(eConstant)"
-        }
-      } else {
-        display.text = "\(eConstant)"
-        displayedText = display.text!
-        userIsTyping = true
-      }
-
-    } else {
       let digit = sender.currentTitle!
       if userIsTyping {
         if clearHasBeenPressed {
@@ -76,7 +49,6 @@ class ViewController: UIViewController {
         userIsTyping = true
         convertThisNumber(displayedText)
       }
-    }
   }
   
   func convertThisNumber(stringNum: NSString) -> Double {
@@ -97,13 +69,6 @@ class ViewController: UIViewController {
     return lastNumberEntered
   }
   
-  
-  @IBAction func xSquared(sender: UIButton) {
-    finishedEnteringLastNumber()
-    let squaredNum = lastNumberEntered * lastNumberEntered
-    display.text = squaredNum.description 
-  }
-  
   @IBAction func operate(sender: UIButton) {
     let operation = sender.currentTitle!
     switch operation {
@@ -120,7 +85,7 @@ class ViewController: UIViewController {
     case "×": operationSymbol = "×"
     display.text = ""
     finishedEnteringLastNumber()
-    println("Last num befo + sign hit: \(lastNumberEntered)")
+    println("Last num befo x sign hit: \(lastNumberEntered)")
     if enterHasBeenPressed {
       firstNumberToCalculate = lastTotaled
     } else {
@@ -154,9 +119,19 @@ class ViewController: UIViewController {
     }
   }
   
+  @IBAction func percentage(sender: AnyObject) {
+    println(display.text)
+    let stringToConvert : NSString = display.text!
+    let convertedString = (stringToConvert as NSString).doubleValue
+    println(convertedString)
+    let percentage = convertedString / 100.0
+    displayedText = "\(percentage)"
+    display.text = "\(percentage)"
+  }
+  
+  
   @IBAction func calculateThis(sender: AnyObject) {
     finishedEnteringLastNumber()
-    //firstNumberToCalculate = lastNumberEntered
     enterHasBeenPressed = true
     switch operationSymbol {
     case "÷": println("divide")
