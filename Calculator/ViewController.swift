@@ -38,6 +38,9 @@ class ViewController: UIViewController {
     let digit = sender.currentTitle!
     
     if userIsTyping {
+      if enterHasBeenPressed {
+        clearAll()
+      }
       
       if display.text == "0" {
         display.text = digit
@@ -126,6 +129,16 @@ class ViewController: UIViewController {
     }
   }
   
+  @IBAction func squareRoot(sender: UIButton) {
+    println(display.text)
+    let stringToConvert : NSString = display.text!
+    let convertedString = (stringToConvert as NSString).doubleValue
+    println(convertedString)
+    let root = sqrt(convertedString)
+    displayedText = "\(root)"
+    display.text = "\(root)"
+  }
+  
   @IBAction func percentage(sender: AnyObject) {
     println(display.text)
     let stringToConvert : NSString = display.text!
@@ -175,7 +188,7 @@ class ViewController: UIViewController {
     firstNumberToCalculate = lastTotaled
   }
   
-  @IBAction func clearAll(sender: AnyObject) {
+  @IBAction func clearAll() {
     display.text = "0"
     lastNumberEntered = 0.0
     lastTotaled = 0.0
