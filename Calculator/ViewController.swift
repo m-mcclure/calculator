@@ -68,9 +68,37 @@ class ViewController: UIViewController {
     let operation = sender.currentTitle!
     switch operation {
     case "÷": operationSymbol = "÷"
+      display.text = ""
+      finishedEnteringLastNumber()
+      println("Last num befo + sign hit: \(lastNumberEntered)")
+      if enterHasBeenPressed {
+        firstNumberToCalculate = lastTotaled
+      } else {
+        firstNumberToCalculate = lastNumberEntered
+      }
+      println(operationSymbol)
+    case "×": operationSymbol = "×"
+      display.text = ""
+      finishedEnteringLastNumber()
+      println("Last num befo + sign hit: \(lastNumberEntered)")
+      if enterHasBeenPressed {
+      firstNumberToCalculate = lastTotaled
+      } else {
+      firstNumberToCalculate = lastNumberEntered
+      }
     println(operationSymbol)
-      //      case "×":
-      //      case "−":
+      
+    case "−": operationSymbol = "−"
+      display.text = ""
+      finishedEnteringLastNumber()
+      println("Last num befo + sign hit: \(lastNumberEntered)")
+      if enterHasBeenPressed {
+        firstNumberToCalculate = lastTotaled
+      } else {
+        firstNumberToCalculate = lastNumberEntered
+      }
+      println(operationSymbol)
+      
     case "+": operationSymbol = "+"
       display.text = ""
       finishedEnteringLastNumber()
@@ -92,14 +120,30 @@ class ViewController: UIViewController {
     enterHasBeenPressed = true
     switch operationSymbol {
     case "÷": println("divide")
-      //      case "×":
-      //      case "−":
-    case "+": let firstNumber = lastNumberEntered
-    let secondNumber : Double = firstNumberToCalculate
-    let sum : Double = firstNumber + secondNumber
-    lastTotaled = sum
+      let firstNumber = lastNumberEntered
+      let secondNumber : Double = firstNumberToCalculate
+      let quotient : Double = secondNumber / firstNumber
+      lastTotaled = quotient
     println("Last totaled: \(lastTotaled)")
     display.text = lastTotaled.description
+    case "×": let firstNumber = lastNumberEntered
+    let secondNumber : Double = firstNumberToCalculate
+    let product : Double = secondNumber * firstNumber
+    lastTotaled = product
+    println("Last totaled: \(lastTotaled)")
+    display.text = lastTotaled.description
+    case "−": let firstNumber = lastNumberEntered
+    let secondNumber : Double = firstNumberToCalculate
+    let difference : Double = secondNumber - firstNumber
+    lastTotaled = difference
+    println("Last totaled: \(lastTotaled)")
+    display.text = lastTotaled.description
+    case "+": let firstNumber = lastNumberEntered
+      let secondNumber : Double = firstNumberToCalculate
+      let sum : Double = firstNumber + secondNumber
+      lastTotaled = sum
+      println("Last totaled: \(lastTotaled)")
+      display.text = lastTotaled.description
     
     default: println("default case: do nothing")
     }
@@ -112,6 +156,6 @@ class ViewController: UIViewController {
     lastTotaled = 0.0
     firstNumberToCalculate = 0.0
     println("cleared")
-    enterHasBeenPressed = false 
+    enterHasBeenPressed = false
   }
 }
