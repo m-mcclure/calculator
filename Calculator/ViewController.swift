@@ -35,20 +35,27 @@ class ViewController: UIViewController {
   }
   
   @IBAction func digitPressed(sender: UIButton) {
-      let digit = sender.currentTitle!
-      if userIsTyping {
-        if clearHasBeenPressed {
-          display.text = ""
-        }
-        display.text = display.text! + digit
+    let digit = sender.currentTitle!
+    
+    if userIsTyping {
+      
+      if display.text == "0" {
+        display.text = digit
         displayedText = display.text!
         convertThisNumber(displayedText)
       } else {
-        display.text = digit
+        
+        display.text = display.text! + digit
         displayedText = display.text!
-        userIsTyping = true
         convertThisNumber(displayedText)
       }
+    } else {
+      
+      display.text = digit
+      displayedText = display.text!
+      userIsTyping = true
+      convertThisNumber(displayedText)
+    }
   }
   
   func convertThisNumber(stringNum: NSString) -> Double {
@@ -133,7 +140,9 @@ class ViewController: UIViewController {
   @IBAction func calculateThis(sender: AnyObject) {
     finishedEnteringLastNumber()
     enterHasBeenPressed = true
+    
     switch operationSymbol {
+      
     case "÷": println("divide")
     let firstNumber = lastNumberEntered
     let secondNumber : Double = firstNumberToCalculate
@@ -141,6 +150,7 @@ class ViewController: UIViewController {
     lastTotaled = quotient
     println("Last totaled: \(lastTotaled)")
     display.text = lastTotaled.description
+      
     case "×": let firstNumber = lastNumberEntered
     let secondNumber : Double = firstNumberToCalculate
     let product : Double = secondNumber * firstNumber
